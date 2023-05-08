@@ -14,17 +14,34 @@ const rotationAnimation = keyframes`
   }
 `;
 
+const Emoji = styled.span`
+  font-size: 36px;
+`;
+
 const Box = styled.button`
   height: 200px;
   width: 200px;
   background-color: tomato;
   animation: ${rotationAnimation} 1s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ${Emoji} {
+    &:hover {
+      font-size: 50px;
+    }
+    &:active {
+      opacity: 0;
+    }
+  }
 `;
 
 function App() {
   return (
     <Wrapper>
-      <Box />
+      <Box>
+        <Emoji as="p">😍</Emoji>
+      </Box>
     </Wrapper>
   );
 }
