@@ -1,47 +1,22 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
+
+const Title = styled.h1`
+  color: ${(props) => props.theme.textColor};
+`;
 
 const Wrapper = styled.div`
   display: flex;
-`;
-
-const rotationAnimation = keyframes`
-  0%, 100% {
-    transform: rotate(0deg);
-    border-radius: 0px;
-  } 50% {
-    transform: rotate(360deg);
-    border-radius: 100px;
-  }
-`;
-
-const Emoji = styled.span`
-  font-size: 36px;
-`;
-
-const Box = styled.button`
-  height: 200px;
-  width: 200px;
-  background-color: tomato;
-  animation: ${rotationAnimation} 1s linear infinite;
-  display: flex;
+  height: 100vh;
+  weight: 100vw;
   justify-content: center;
   align-items: center;
-  ${Emoji} {
-    &:hover {
-      font-size: 50px;
-    }
-    &:active {
-      opacity: 0;
-    }
-  }
+  background-color: ${(props) => props.theme.backgroundColor};
 `;
 
 function App() {
   return (
     <Wrapper>
-      <Box>
-        <Emoji as="p">😍</Emoji>
-      </Box>
+      <Title>Hello</Title>
     </Wrapper>
   );
 }
