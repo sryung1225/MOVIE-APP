@@ -7,7 +7,7 @@ const Title = styled.h1`
 const Wrapper = styled.div`
   display: flex;
   height: 100vh;
-  weight: 100vw;
+  width: 100vw;
   justify-content: center;
   align-items: center;
   background-color: ${(props) => props.theme.backgroundColor};
