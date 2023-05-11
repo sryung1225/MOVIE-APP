@@ -1,5 +1,5 @@
+import { useState } from "react";
 import styled from "styled-components";
-
 interface ContainerProps {
   bgColor: string;
   borderColor: string;
@@ -19,24 +19,10 @@ interface CircleProps {
   text?: string;
 }
 
-function Circle({ bgColor, borderColor, text = "기본텍스트" }: CircleProps) {
-  return (
-    <Continer bgColor={bgColor} borderColor={borderColor ?? "black"}>
-      {text}
-    </Continer>
-  );
+function Circle({ bgColor, borderColor }: CircleProps) {
+  const [counter, setCounter] = useState(1);
+  setCounter(2);
+  return <Continer bgColor={bgColor} borderColor={borderColor ?? "black"} />;
 }
 
 export default Circle;
-
-// practice interface -------------------------------------
-// interface PlayerShape {
-//   name: string;
-//   age: number;
-// }
-
-// const sayHello = (playerObj: PlayerShape) =>
-//   `Hello ${playerObj.name} you are ${playerObj.age} years old.`;
-
-// sayHello({ name: "nico", age: 12 });
-// sayHello({ name: "ryung", age: 26 });
