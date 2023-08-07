@@ -7,7 +7,7 @@
   <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-    function Btn({ txt, changeValue }) {
+    function Btn({ txt, changeValue, fontSize = 14 }) {
       console.log(txt, "was rendered");
       return (
         <button
@@ -18,6 +18,7 @@
             padding: "10px 20px",
             border: 0,
             borderRadius: 10,
+            fontSize: fontSize,
           }}
         >
           {txt}
@@ -30,7 +31,7 @@
       const changeValue = () => setValue("Revert Changes");
       return (
         <div>
-          <MemorizedBtn txt={value} changeValue={changeValue} />
+          <MemorizedBtn txt={value} changeValue={changeValue} fontSize={18} />
           <MemorizedBtn txt="Confirm" />
         </div>
       );
