@@ -14,13 +14,9 @@ function App() {
     setToDos((currentArray) => [toDo, ...currentArray]);
     setToDo("");
   };
-  const checkToDos = () => {
-    console.log(toDos);
-  };
-  useEffect(checkToDos, [toDos]);
   return (
     <div>
-      <h1>My To Dos</h1>
+      <h1>My To Dos ({toDos.length})</h1>
       <form onSubmit={onSubmit}>
         <input
           onChange={onChange}
@@ -30,6 +26,12 @@ function App() {
         />
         <button>할 일 추가</button>
       </form>
+      <hr />
+      <ul>
+        {toDos.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
     </div>
   );
 }
