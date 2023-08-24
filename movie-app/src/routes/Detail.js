@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Loading from "../components/Loading.js";
 
 function Detail() {
   const { movieId } = useParams();
@@ -21,7 +22,7 @@ function Detail() {
   return (
     <div>
       {loading ? (
-        <h1>Loading...</h1>
+        <Loading />
       ) : (
         <div>
           <h1>{movie.title}</h1>
