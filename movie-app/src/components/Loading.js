@@ -1,5 +1,13 @@
 import styled, { keyframes } from "styled-components";
 
+function Loading() {
+  return (
+    <SpinnerBox>
+      <Spinner />
+    </SpinnerBox>
+  );
+}
+
 const rotation = keyframes`
   from {
     transform: rotate(0deg);
@@ -19,18 +27,11 @@ const SpinnerBox = styled.div`
 const Spinner = styled.div`
   height: 30px;
   width: 30px;
-  border: 1px solid #f8049c;
+  border: 3px solid #fff;
   border-radius: 50%;
   border-top: none;
   border-right: none;
   animation: ${rotation} 1s linear infinite;
 `;
 
-function Loading() {
-  return (
-    <SpinnerBox>
-      <Spinner />
-    </SpinnerBox>
-  );
-}
 export default Loading;
