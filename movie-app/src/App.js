@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movie/:movieId" element={<Detail />} />
